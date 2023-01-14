@@ -12,9 +12,64 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+      #myBtn {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed/sticky position */
+        bottom: 20px;
+        /* Place the button at the bottom of the page */
+        right: 30px;
+        /* Place the button 30px from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        border: none;
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        background-color: rgb(23, 48, 237);
+        /* Set a background color */
+        color: white;
+        /* Text color */
+        cursor: pointer;
+        /* Add a mouse pointer on hover */
+        padding: 15px;
+        /* Some padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        font-size: 18px;
+        /* Increase font size */
+      }
+
+      #myBtn:hover {
+        background-color: #555;
+        /* Add a dark-grey background on hover */
+      }
+    </style>
   </head>
 
   <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>// Get the button:
+      let mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }</script>
     <header>
       <div>
         <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -267,24 +322,9 @@
       </article>
     </section>
     <aside>
-      <style>
-        aside {
-          display: "none";
-          padding: "20px";
-          background: #1a4ec8;
-          font-size: 20px;
-          color: #fff;
-          cursor: pointer;
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-        }
-      </style>
-      <div class="right-align">
-        <span class="ir-arriba icon-arrow-up2"><span class="material-symbols-outlined">
-          arrow_upward
-          </span></span>
-      </div>
+
+
+
     </aside>
     <footer style="background-color: #090809;">
       <div class="d-flex justify-content-center">
@@ -299,23 +339,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"></script>
-      <script> $(document).ready(function(){
 
-        $('.ir-arriba').click(function(){
-          $('body, html').animate({
-            scrollTop: '0px'
-          }, 300);
-        });
-      
-        $(window).scroll(function(){
-          if( $(this).scrollTop() > 0 ){
-            $('.ir-arriba').slideDown(300);
-          } else {
-            $('.ir-arriba').slideUp(300);
-          }
-        });
-      
-      });</script>
 
   </body>
 
